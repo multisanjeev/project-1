@@ -8,5 +8,11 @@ pipeline {
 				sh 'mvn validate'			
 			}
 		}
+		stage('maven compile code') {
+			steps {
+				echo 'compile code'
+				sh 'mvn compile'
+			}
+		}
 	}
 }
