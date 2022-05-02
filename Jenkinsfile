@@ -15,7 +15,7 @@ pipeline {
 			}
 		}
 		stage('maven test job') {
-			stages {
+			steps {
 				echo 'Test code job'
 				sh 'mvn test'
 			}
