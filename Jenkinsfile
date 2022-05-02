@@ -14,6 +14,12 @@ pipeline {
 				sh 'mvn compile'
 			}
 		}
+		stage('code review') {
+			steps {
+				echo 'code review'
+				sh 'mvn pmd:pmd'
+			}
+		}
 		stage('maven test job') {
 			steps {
 				echo 'Test code job'
