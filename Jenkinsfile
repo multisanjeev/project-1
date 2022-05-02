@@ -31,6 +31,7 @@ pipeline {
 	post {
 		always {
 			junit 'target/surefire-reports/*.xml'
+			pmd 'target/pmd.xml'
 		}
 	}
 }
