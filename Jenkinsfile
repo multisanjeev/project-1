@@ -26,12 +26,16 @@ pipeline {
 				sh 'mvn test'
 			}
 		}
+		stage('Matrix check through cobertura') {
+			steps {
+				sh 'mvn cobertura:cobertura'
+			}
+		}
 	}
 	
 	post {
 		always {
 			junit 'target/surefire-reports/*.xml'
-			pmd 'target/pmd.xml'
 		}
 	}
 }
